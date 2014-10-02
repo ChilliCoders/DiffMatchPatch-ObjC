@@ -42,7 +42,7 @@ typedef enum {
 
 #import <Foundation/Foundation.h>
 
-@interface DMDiff :NSObject <NSCopying> {
+@interface DMDiff :NSObject <NSCopying, NSCoding> {
 }
 
 @property (nonatomic, assign) DMDiffOperation operation;

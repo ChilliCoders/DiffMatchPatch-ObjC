@@ -122,4 +122,19 @@
 	return [_text hash] ^ (NSUInteger)_operation;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if(self) {
+        self.operation = [[aDecoder decodeObjectForKey:@"operation"] integerValue];
+        self.text = [aDecoder decodeObjectForKey:@"text"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:@(self.operation) forKey:@"operation"];
+    [aCoder encodeObject:self.text forKey:@"text"];
+}
+
+
 @end
